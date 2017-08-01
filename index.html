@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="reset.css">
   <link rel="stylesheet" type="text/css" href="train.css">
@@ -15,28 +16,60 @@
 
 <div class="container">
   <div class="page-header">
-    <h1>ALL ABOARD!!!</h1>
+    <h1 class="headertitle">ALL ABOARD!!!</h1>
   </div>
 
-  <div class="row">>
-    <div class="col-md-3">    
-    </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h2 class="panel-title">Train Schedule</h2>
+        </div>
+        <div class="panel-body">
+          <table class="table table-hover" id="trainLog">
+            <thead>
+              <tr>
+                <th>Train Name</th>
+                <th>Destination</th>
+                <th>Next Train Arrival</th>
+                <th>Frequency: Min</th>
+                <th>Minutes Until Arrival</th>
+              </tr>
+            </thead>
+            <tbody>
 
-    <div class="col-md-3">
-    </div>
+            </tbody>
 
-    <div class="col-md-2">
-    </div>
-
-    <div class="col-md-2">
-    </div>
-
-    <div class="col-md-2">
+          </table>
+        </div>
+      </div>
+      <div class="pane panel-primary">
+        <div class="panel-heading">
+          <h2 class="panel-title">Add More Trains</h2>
+      </div>
+      <div class="panel-body">
+        <form>
+          <div class="form-group">
+            <label for="">Train Name</label><br/>
+            <input type="text" class="form-contorl" id="trainInput">
+          </div>
+          <div class="form-group">
+            <label for="">Destination</label><br/>
+            <input type="text" class="form-contorl" id="destinationInput">
+          </div>
+          <div class="form-group">
+            <label for="">First Train Arrival Time: (00:00)</label><br/>
+            <input type="text" class="form-contorl" id="arrivalInput">
+          </div>
+          <div class="form-group">
+            <label for="">Minutes until arrival</label><br/>
+            <input type="text" class="form-contorl" id="frequencyInput">
+          </div>
+          <button type="submit" class="btn btn-primary" id="trainSubmitButton">Okay</button>
+        </form>
+      </div>
     </div>
   </div>
-
-
-
 
 </div>
 
@@ -46,10 +79,7 @@
 
 
 
-
-
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script type="text/javascript" src="js/app.js"></script>
+<script type="text/javascript" src="train.js"></script>
 </body>
 </html>

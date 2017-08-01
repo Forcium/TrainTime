@@ -3,6 +3,37 @@ body {
   background-color: lightgray;
 }
 
-.page-header{
+.headertitle {
+  font-weight: bold;
+  font-size: 60px;
+}
+
+.page-header {
   border: 2px solid blue;
+}
+
+.panel-title {
+  border: 2px solid yellow;
+}
+
+form {
+  border: 2px solid blue;
+  background-color: white;
+}
+
+.panel-body {
+  background-color: white;
+  border:2px solid blue;
+}
+
+#trainLog {
+  border: 2px solid red;
+}
+
+thead {
+  border: 2px solid green;
+}
+
+tbody {
+  border: 2px solid purple;
 }
