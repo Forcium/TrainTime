@@ -8,7 +8,7 @@ var config = {
     messagingSenderId: "501443964492"
   };
   firebase.initializeApp(config);
-var database = firebase.database();
+  var database = firebase.database();
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -41,5 +41,26 @@ $("#trainSubmitButton").on("click", function() {
   $("#arrivalInput").val("");
   $("#frequencyInput").val("");
 
-  return false;
+  // return false;
 });
+
+  //firebase event for adding the train values upon user entry
+  database.ref().on("child_added", function(snapshot) {
+
+    // create variable for snapshots, getting ready for pulling from database
+    var trainName = snapshot.val().name;
+    var destination = snapshot.val().place;
+    var initialTrain = snapshot.val().firstTrain;
+    var freq = snapshot.val().frequencyOf;
+
+    var firstTrainTime = moment(initialTrain, "HH:mm");
+    var current = moment().format("HH:mm");
+    var difference = moment().diff(moment(firstTrainTime), "minutes");
+    var timeRemaining = difference % freq;
+    var untilNextTrain = freq - timeRemaining;
+
+    var trainNext = moment().add(untilNextTrain, "minutes").format("HH:mm");
+
+
+    $("#trainBody").append("<tr><td>" + trainName + "</td><td>" + destination + "</td><td>" + trainNext + "</td><td>" + freq + "</td><td>" + untilNextTrain + "</td></tr>");
+  });

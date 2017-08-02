@@ -1,6 +1,7 @@
 body {
-  border: 2px solid red;
+  /*border: 2px solid red;*/
   background-color: lightgray;
+  margin: 2%;
 }
 
 .headertitle {
@@ -9,31 +10,41 @@ body {
 }
 
 .page-header {
-  border: 2px solid blue;
+  text-align: center;
+  /*border: 2px solid #337AB7;*/
 }
 
 .panel-title {
-  border: 2px solid yellow;
+  /*border: 2px solid yellow;*/
+  font-weight: bold;
 }
 
 form {
-  border: 2px solid blue;
+  /*border: 2px solid #337AB7;*/
   background-color: white;
+}
+
+label {
+  font-weight: bold;
+}
+
+th {
+  font-weight: bold;
 }
 
 .panel-body {
   background-color: white;
-  border:2px solid blue;
+  /*border:2px solid #337AB7;*/
 }
 
 #trainLog {
-  border: 2px solid red;
+  /*border: 2px solid red;*/
 }
 
 thead {
-  border: 2px solid green;
+  /*border: 2px solid green;*/
 }
 
 tbody {
-  border: 2px solid purple;
+  /*border: 2px solid purple;*/
 }
