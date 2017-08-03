@@ -18,7 +18,7 @@ $("#trainSubmitButton").on("click", function() {
   //user input form
   var trainName = $("#trainInput").val().trim();
   var destination = $("#destinationInput").val().trim();
-  var firstArrival = $("#arrivalInput").val().trim();
+  var firstArrival = parseInt($("#arrivalInput").val().trim());
   var frequency = $("#frequencyInput").val().trim();
 
   //temporary js object for train data
@@ -41,7 +41,7 @@ $("#trainSubmitButton").on("click", function() {
   $("#arrivalInput").val("");
   $("#frequencyInput").val("");
 
-  // return false;
+
 });
 
   //firebase event for adding the train values upon user entry
